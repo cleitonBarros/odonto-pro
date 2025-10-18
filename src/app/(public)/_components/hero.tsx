@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <div className="bg-white">
-      <Container as="section" className="px-4 pt-20 sm:px-6 lg:px-8">
+      <Container as="section" className="px-4 pt-20 pb-4 sm:px-6 sm:pb-0 lg:px-8">
         <main className="flex items-center justify-center">
           <article className="flex max-w-3xl flex-2 flex-col justify-center space-y-8">
             <h1 className="max-w-2xl text-4xl font-bold tracking-tight lg:text-5xl">
@@ -20,7 +20,7 @@ export default function Hero() {
               Encontre uma clinica
             </Button>
           </article>
-          <div className='hidden lg:block'>
+          <div className="hidden lg:block">
             <Image
               src={doctorImg}
               alt="Foto ilustrativa de um profissional de saude"
