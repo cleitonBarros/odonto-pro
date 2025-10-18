@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
+    "source.organizeImports.biome": "never",
     "source.fixAll.biome": "explicit"
   },
   "[typescript]": {
