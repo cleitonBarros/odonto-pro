@@ -1,10 +1,17 @@
+'use client'
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { LogIn } from 'lucide-react';
+import { useSession } from 'next-auth/react';
+import { handleRegister } from '../_actions/login';
 
 export default function NavLinks({ ...rest }) {
+  const { data: session, status } = useSession();
   const navItems = [{ href: '#profissionais', label: 'Profissionais' }];
-  const session = null;
+
+  const handleLogin = async () => {
+    await handleRegister('github');
+  };
 
   return (
     <>
@@ -20,12 +27,14 @@ export default function NavLinks({ ...rest }) {
           </Link>
         </Button>
       ))}
-      {session ? (
+      {status === 'loading' ? (
+        <></>
+      ) : session ? (
         <Link href="/dashboard" className="flex items-center justify-center gap-2">
           Acessar clinica
         </Link>
       ) : (
-        <Button>
+        <Button onClick={handleLogin}>
           <LogIn /> Portal da clinica
         </Button>
       )}
