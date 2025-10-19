@@ -18,7 +18,7 @@ import {
 
 import { FaTooth } from 'react-icons/fa';
 import Link from 'next/link';
-import { CalendarHeart, FolderArchive, Landmark, Settings } from 'lucide-react';
+import { CalendarHeart, FolderArchive, Landmark, Settings, User2 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 const data = {
@@ -47,6 +47,11 @@ const data = {
     },
   ],
   documents: [
+    {
+      name: 'Perfil',
+      url: '/dashboard/profile',
+      icon: <User2 />,
+    },
     {
       name: 'Planos',
       url: '/dashboard/plans',
