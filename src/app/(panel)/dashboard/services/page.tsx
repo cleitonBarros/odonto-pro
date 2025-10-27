@@ -1,9 +1,12 @@
-export default function Services() {
-  return (
-    <div className="flex flex-1 flex-col p-4">
-      <h1 className="text-2xl font-bold mb-4">Services</h1>
-      <p>Welcome to the services page! Here you can manage your services and view your activity.</p>
-      {/* Additional services content can be added here */}
-    </div>
-  );
+import { redirect } from 'next/navigation';
+import getAuthSession from '../../../../hooks/get-auth-session';
+import ServicesContent from './_components/services-content';
+
+export default async function Services() {
+  const session = await getAuthSession();
+
+  if (!session) {
+    redirect('/');
+  }
+  return <ServicesContent userId={session.user?.id} />;
 }
