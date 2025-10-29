@@ -7,7 +7,7 @@ const formSchema = z.object({
   name: z.string().min(1, "O nome é obrigatório"),
   email: z.string().email("O email é obrigatório"),
   phone: z.string().min(1, "O telefone é obrigatório"),
-  date: z.date().min(new Date(), "A data deve ser futura"),
+  date: z.date(),
   time: z.string().min(1, "O horário é obrigatório"),
   clinicId: z.string().min(1, "A clínica é obrigatória"),
   serviceId: z.string().min(1, "O serviço é obrigatório"),

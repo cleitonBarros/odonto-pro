@@ -6,6 +6,7 @@ import { Button } from '../../../components/ui/button';
 import { Calendar } from 'lucide-react';
 import { ButtonCopyLinks } from './_components/button-copy-links';
 import { Reminders } from './_components/reminder/reminders';
+import { Appointments } from './_components/appointments/appointments';
 
 export default async function DashboardPage() {
   const session = await getAuthSession();
@@ -30,7 +31,7 @@ export default async function DashboardPage() {
           <ButtonCopyLinks userId={session.user.id} />
         </div>
         <section className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <div>Agenda</div>
+          <Appointments userId={session.user.id} />
           <Reminders userId={session.user.id} />
         </section>
       </Container>

@@ -45,6 +45,7 @@ model Appointment {
   email       String
   date        DateTime
   time        String
+  status      Boolean @default(true)
   
   serviceId   String
   service     Services @relation(fields: [serviceId], references: [id])

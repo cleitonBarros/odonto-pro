@@ -1,13 +1,10 @@
 'use client';
 
-import { Reminder } from '@prisma/client';
+import type { Reminder } from '@prisma/client';
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
   CardHeader,
-  CardFooter,
   CardTitle,
 } from '../../../../../components/ui/card';
 import { Button } from '../../../../../components/ui/button';
