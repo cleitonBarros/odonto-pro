@@ -24,7 +24,13 @@ export function AppointmentsContent({ appointment }: AppointmentsContentProps) {
           <article>
             <p className="text-sm text-gray-600">Horario: {appointment.time}</p>
             <p className="mb-2 text-sm text-gray-600">
-              Data: {format(appointment.date, 'dd/MM/yyyy')}
+              Data:
+              {new Intl.DateTimeFormat('pt-BR', {
+                timeZone: 'UTC',
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+              }).format(new Date(appointment.date))}
             </p>
             <p className="text-sm text-gray-600">Nome: {appointment.name}</p>
             <p className="text-sm text-gray-600">Email: {appointment.email}</p>
